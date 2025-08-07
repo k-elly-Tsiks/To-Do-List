@@ -1,0 +1,166 @@
+/* general page styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf6f9;
+  text-align: center;
+  padding: 30px;
+}
+
+/* title styles */
+h1 {
+  color: #d63384;
+  margin-bottom: 20px;
+}
+/* dark mode background */
+.dark-mode {
+  background: radial-gradient(circle at top left, #510132,#510132);
+}
+
+/* theme toggle button(moon/sun button) */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 99;
+  background: #fff;
+  color: #2f0236;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* toggle button color changes in dark mode */
+.dark-mode .theme-toggle {
+  background: #333;
+  color: #fff;
+}
+
+/* main container styles */
+.todo-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* input box style */
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* add task button */
+button {
+  padding: 10px 15px;
+  background-color: #d63384;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* remove default bullet points */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* each task row */
+li {
+  background: #f7f7f7;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* time and date display */
+li span.time {
+  color: #6c757d;
+  font-size: 12px;
+}
+
+li span.date {
+  color: #6c757d;
+  font-size: 12px;
+}
+
+/* the actual task text */
+li .task {
+  flex-grow: 1;
+  margin: 0 10px;
+  text-align: center;
+}
+
+/* line-through effect when marked completed */
+.completed .task {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* buttons for check, delete, and edit */
+li .actions button {
+  font-size: 14px;
+  background: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+/* progress bar container */
+.progress-bar {
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* actual progress fill */
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #28a745;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  font-size: 12px;
+  transition: width 0.3s ease;
+}
+
+/* media query for small screens */
+@media (max-width: 768px) {
+  /* this ensures the entire list item stacks vertically */
+  ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* this keeps the buttons horizontal and pushes them to the right */
+  li .actions {
+    width: 100%; 
+    display: flex;
+    justify-content: flex-end; 
+  }
+  
+  /* this adds spacing between the buttons */
+  li .actions button {
+    margin-left: 5px;
+  }
+}
